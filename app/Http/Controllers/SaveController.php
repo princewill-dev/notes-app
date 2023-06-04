@@ -12,7 +12,7 @@ class SaveController extends Controller
 
         // This function generate a unique 4 digits code
         function generateRandomString($length = 4){
-            $a = '1234567890abcdefghijklmnopqrstuvwxyz';
+            $a = '1234567890';
             $characterLength = strlen($a);
             $randomString = '';
             for($i = 0; $i < $length; $i++){
