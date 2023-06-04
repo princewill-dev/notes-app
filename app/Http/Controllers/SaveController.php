@@ -11,7 +11,7 @@ class SaveController extends Controller
     function saveFunction(Request $request) {
 
         // This function generate a unique 4 digits code
-        function generateRandomString($length = 4){
+        function generateRandomString($length = 5){
             $a = '1234567890';
             $characterLength = strlen($a);
             $randomString = '';
