@@ -50,7 +50,7 @@
                     <form action="/savewriteup" method="POST" class="header-form mx-auto" id="header-form">
                         @csrf
                         
-                        <p class="para-1 mb-2 mx-xl-0 mx-auto">Save and retrieve writeups anonymously with a 4 digit code</p>
+                        <p class="para-1 mb-2 mx-xl-0 mx-auto">save and retrieve notes anonymously <br> with a 4 digit code</p>
                         
                         <div class="inputs">
                         <textarea name="writeup" id="" cols="35" rows="10" class="glassy form-control" required style="box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8;" placeholder="type something"></textarea>   

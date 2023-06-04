@@ -47,7 +47,7 @@ class SaveController extends Controller
             return view('show', compact('writeUp'));
         } else {
             // If the write-up does not exist, display an error message
-            $errorMessage = 'The write-up does not exist.';
+            $errorMessage = 'The note does not exist.';
             return view('error', compact('errorMessage'));
 
         }
@@ -71,7 +71,7 @@ class SaveController extends Controller
             return view('show', compact('writeUp'));
         } else {
             // If the write-up does not exist, display an error message
-            $errorMessage = 'Invalid code. The write-up does not exist.';
+            $errorMessage = 'Invalid code. note does not exist.';
             return view('error', compact('errorMessage'));
         }
     }

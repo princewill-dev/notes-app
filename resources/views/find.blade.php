@@ -21,7 +21,7 @@
                   {{-- <p style="color: #ffffff; padding: 5px; background: red;">{{ $errorMessage  }}</p> --}}
 
                   <!-- form-title -->
-                  <h2 class="form-title mb-2">retrieve writeups</h2>
+                  <h2 class="form-title mb-2">retrieve notes</h2>
     
                   <!-- inputs -->
                   <div class="inputs">
