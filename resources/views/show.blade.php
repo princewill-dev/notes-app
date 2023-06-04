@@ -28,7 +28,7 @@
                         <p class="para-1 mb-2 mx-xl-0 mx-auto">here is your writeup</p>
                         
                         <div class="" style="padding: 20px; background: #fff;">
-                            <p>{{ $writeUp->writeup }}</p>
+                            <p>{{ $decryptedText }}</p>
                         </div>
 
                         <br>

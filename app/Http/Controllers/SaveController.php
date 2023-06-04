@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Save;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class SaveController extends Controller
 {
@@ -26,8 +27,10 @@ class SaveController extends Controller
             'writeup' => 'required|max:2000',
         ]);
 
+        $encryptedContent = Crypt::encryptString($validateData['writeup']);
+
         $contentdata = new Save;
-        $contentdata->writeup = $validateData['writeup'];
+        $contentdata->writeup = $encryptedContent;
         $contentdata->code = $code;
         $contentdata->save();
 
@@ -40,11 +43,14 @@ class SaveController extends Controller
 
     public function findFromUrl($code) {
 
-        $writeUp = Save::where('code', $code)->first();
+        $encryptedData = Save::where('code', $code)->first();
 
-        if ($writeUp) {
+        if ($encryptedData) {
             // If the write-up exists, display it
-            return view('show', compact('writeUp'));
+
+            $decryptedText = Crypt::decryptString($encryptedData->writeup);
+
+            return view('show', compact('decryptedText'));
         } else {
             // If the write-up does not exist, display an error message
             $errorMessage = 'The note does not exist.';
@@ -64,11 +70,12 @@ class SaveController extends Controller
         $code = $request->input('code');
 
         // Retrieve the write-up associated with the provided code
-        $writeUp = Save::where('code', $code)->first();
+        $encryptedData = Save::where('code', $code)->first();
 
-        if ($writeUp) {
+        if ($encryptedData) {
             // If the write-up exists, display it
-            return view('show', compact('writeUp'));
+            $decryptedText = Crypt::decryptString($encryptedData->writeup);
+            return view('show', compact('decryptedText'));
         } else {
             // If the write-up does not exist, display an error message
             $errorMessage = 'Invalid code. note does not exist.';
