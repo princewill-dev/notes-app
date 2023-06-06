@@ -25,7 +25,7 @@
                 <div class="form-container" id="form-container">
                     <form action="/savewriteup" method="POST" class="header-form mx-auto" id="header-form">
                         @csrf
-                        <p class="para-1 mb-2 mx-xl-0 mx-auto">here is your writeup</p>
+                        <p class="para-1 mb-2 mx-xl-0 mx-auto">here is your note</p>
                         
                         <div class="" style="padding: 20px; background: #fff;">
                             <p>{{ $decryptedText }}</p>
