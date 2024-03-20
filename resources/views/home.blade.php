@@ -25,7 +25,7 @@
                             <span style="padding: 5px; border: 2px dashed #ffffff; color: #fff; text-align: center;">{{ session('code') }}</span>
                             <br>
                             <br>
-                            <a href="https://copystuff.io/{{ session('code') }}" style="color: #fff; padding: 5px; border: 1px solid #ffffff;"> https://copystuff.io/{{ session('code') }}</a>
+                            <!--<a href="notes.princewilldev.com/{{ session('code') }}" style="color: #fff; padding: 5px; border: 1px solid #ffffff;"> notes.princewilldev.com/{{ session('code') }}</a>-->
                         </div>
                         <br>
                         <a href="/find/{{ session('code') }}" class="btn btn-outline-dark level-up shadow-off w-100 font-500">view saved</a>

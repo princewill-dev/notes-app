@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SaveController;
+//use App\Http\Controllers\externalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', [PageController::class, 'home']);
 Route::post('/savewriteup', [SaveController::class, 'saveFunction']); 
 
 //this help to find a write when the unique code is appended on the url eg: savewriteup.com/1234
-Route::get('/{code}', [SaveController::class, 'findFromUrl']); 
+// Route::get('/{code}', [SaveController::class, 'findFromUrl']); 
 
 //this shows the find-writeup page where someone can enter a unique code
 Route::get('/writeup/find', [PageController::class, 'findFunction']);
@@ -36,3 +37,5 @@ Route::post('/findwriteupform', [SaveController::class, 'findWriteupFunction']);
 
 
 //Route::post('/findwriteup/{code}', [SaveController::class, 'findWriteup']);
+
+// Route::get('/task-app', [externalController::class, 'externalFunction']);
