@@ -22,13 +22,13 @@ RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/public
 
 COPY . .
 
 # Change ownership of /var/www directory to www-data user
-RUN chown -R www-data:www-data /var/www
-RUN chmod -R 755 /var/www
+RUN chown -R www-data:www-data /var/www/public
+RUN chmod -R 755 /var/www/public
 
 RUN composer install
 
